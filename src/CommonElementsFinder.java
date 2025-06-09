@@ -16,16 +16,12 @@ public class CommonElementsFinder {
      */
     public static Set<Integer> findCommonElements(int[] array1, int[] array2) {
         Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>();
         for (int i: array1) {
             set1.add(i);
         }
-        for (int i: array2) {
-            set2.add(i);
-        }
         Set<Integer> commonSet = new HashSet<>();
-        for (int i: set1) {
-            if (set2.contains(i)) commonSet.add(i);
+        for (int i: array2) {
+            if (set1.contains(i)) commonSet.add(i);
         }
         
         return commonSet;
